@@ -12,15 +12,17 @@ public class StudentRegister {
         this.students_ = new ArrayList<>();
         this.courses_ = new ArrayList<>();
     }
-    public ArrayList<Student> getStudent(){
-        ArrayList<Student> sorted = new ArrayList<>();
+    
+    public ArrayList<Student> getStudents(){
+        ArrayList<Student> sorted = students_;
         Comparator<Student> compare = Comparator.comparing(Student::getName);
-        sorted = Collections.sort(students_,compare);
+        Collections.sort(sorted,compare);
         return sorted;
     }
     public ArrayList<Course> getCourses(){
+        ArrayList<Course> sorted = courses_;
         Comparator<Course> compare = Comparator.comparing(Course::getName);
-        ArrayList<Course> sorted = Collections.sort(courses_,compare);
+        Collections.sort(sorted,compare);
         return sorted;
     }
     public void addStudent(Student student){
@@ -39,10 +41,11 @@ public class StudentRegister {
         
         Student student = null;
         
-        for(int i=0;i<students_.size();i++){
-            var current = students_[i].getStudentNumber();
+        
+        for(var current : students_){
+            var id = current.getStudentNumber();
             
-            if (current.equals(studentNumber)){
+            if (id.equals(studentNumber)){
                 student = current;
                 break;
             }
@@ -56,14 +59,15 @@ public class StudentRegister {
         if(order.equals("by name")){
             var courses = getCourses();
             for(var course : courses){
-                System.out.format("  %s %s: %s%n",course.getName(),course.getCode(),course.getGrade);
+                System.out.format("  %s %s: %s%n",course.getName(),course.getCode(),course.getCredits());
             }
         }
         else if(order.equals("by code")){
+            ArrayList<Course> sorted = courses_;
             Comparator<Course> compare = Comparator.comparing(Course::getName);
-            ArrayList<Course> sorted = Collections.sort(courses_,compare)
+            Collections.sort(sorted,compare);
             for(var course : sorted){
-                System.out.format("  %s %s: %s%n",course.getName(),course.getCode(),course.getGrade);
+                System.out.format("  %s %s: %s%n",course.getName(),course.getCode(),course.getCredits());
             }
         }
         
@@ -72,10 +76,10 @@ public class StudentRegister {
         
         Student student = null;
         
-        for(int i=0;i<students_.size();i++){
-            var current = students_[i].getStudentNumber();
+        for(var current : students_ ){
+            var id = current.getStudentNumber();
             
-            if (current.equals(studentNumber)){
+            if (id.equals(studentNumber)){
                 student = current;
                 break;
             }
@@ -87,7 +91,7 @@ public class StudentRegister {
         System.out.format("studentName(&s)&n",studentNumber);
         
         for(var course : courses_){
-            System.out.format("  %s %s: %s%n",course.getName(),course.getCode(),course.getGrade);            
+            System.out.format("  %s %s: %s%n",course.getName(),course.getCode(),course.getCredits());            
         }
     }
     
