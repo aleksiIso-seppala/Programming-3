@@ -11,6 +11,7 @@ public class StudentRegister {
     public StudentRegister(){
         this.students_ = new ArrayList<>();
         this.courses_ = new ArrayList<>();
+        this.attainments_ = new ArrayList<>();
     }
     
     public ArrayList<Student> getStudents(){
@@ -33,7 +34,7 @@ public class StudentRegister {
         courses_.add(course);
         return;
     }
-    public void addAttanment(Attainment att){
+    public void addAttainment(Attainment att){
         attainments_.add(att);
         return;
     }
