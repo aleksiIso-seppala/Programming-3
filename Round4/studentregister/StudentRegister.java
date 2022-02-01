@@ -118,7 +118,7 @@ public class StudentRegister {
             System.out.println("Unknown student number: " + studentNumber);
             return;
         }
-        System.out.format("%s(%s)%n",student.getName(),studentNumber);
+        System.out.format("%s (%s):%n",student.getName(),studentNumber);
         ArrayList<Attainment> attainments = attainments_.get(studentNumber);
         for(var att : attainments){
             String coursename = "";
