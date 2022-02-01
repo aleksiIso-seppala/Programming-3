@@ -17,7 +17,7 @@ public class StudentRegister {
     public ArrayList<Student> getStudents(){
         ArrayList<Student> sorted = students_;
         Comparator<Student> compare = Comparator.comparing(Student::getName);
-        Collections.sort(sorted,compare);git s
+        Collections.sort(sorted,compare);
         return sorted;
     }
     public ArrayList<Course> getCourses(){
