@@ -1,9 +1,9 @@
 
 public class Attainment {
     
-    public String courseCode_;
-    public String studentNumber_;
-    public int grade_;
+    private String courseCode_;
+    private String studentNumber_;
+    private int grade_;
     
     public Attainment(String courseCode, String studentNumber, int grade){
         this.courseCode_ = courseCode;
@@ -11,7 +11,7 @@ public class Attainment {
         this.grade_ = grade;
     }
     
-    public String getCourseCoede(){
+    public String getCourseCode(){
         return courseCode_;
     }
     public String getStudentNumber(){

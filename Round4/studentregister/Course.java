@@ -1,9 +1,9 @@
 
 public class Course {
     
-    public String code_;
-    public String name_;
-    public int credits_;
+    private String code_;
+    private String name_;
+    private int credits_;
     
     public Course(String code, String name, int credits){
         this.code_ = code;

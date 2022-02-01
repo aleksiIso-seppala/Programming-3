@@ -1,8 +1,8 @@
 
 public class Student {
     
-    public String name_;
-    public String studentNumber_;
+    private String name_;
+    private String studentNumber_;
     
     public Student(String name, String studentNumber){
         this.name_ = name;
