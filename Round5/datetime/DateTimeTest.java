@@ -18,7 +18,7 @@ public class DateTimeTest {
                   .parseInt(parts[5])));
         }
       }
-      catch(DateException e) {
+      catch(DateExjavacvception e) {
         System.out.println(e);
       }
     }

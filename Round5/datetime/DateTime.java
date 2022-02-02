@@ -36,12 +36,25 @@ public class DateTime extends Date{
         return second_;
     }
     public String toString(){
-        int hour = getHour();
-        int minute = getMinute();
-        int second = getSecond();
+        
+        
+        
+        String hour = Integer.toString(hour_);
+        String minute = Integer.toString(minute_);
+        String second = Integer.toString(second_);
+        
+        if(hour_<10){
+            hour = "0"+hour;
+        }
+        if(minute_<10){
+            minute = "0"+minute;
+        }
+        if(second_<10){
+            second = "0"+second;
+        }
         
         String date = super.toString();
-        String time = hour_ + ":" + minute_ + ":" + second_;
+        String time = hour + ":" + minute + ":" + second;
         return date + " " + time;
     }
     

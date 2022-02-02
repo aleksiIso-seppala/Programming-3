@@ -33,7 +33,16 @@ public class Date {
         return day_;
     }
     public String toString(){
-        String date = day_ + "." + month_ + "." + year_;
+        String day = Integer.toString(day_);
+        String month = Integer.toString(month_);
+        if(day_<10){
+            day = "0"+day;
+        }
+        if(month_<10){
+            month = "0"+month;
+        }
+        
+        String date = day + "." + month + "." + year_;
         return date;
     }
     private class LegalDate {
