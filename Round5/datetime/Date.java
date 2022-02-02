@@ -42,7 +42,7 @@ public class Date {
         // Funktiom‰‰ritys kuin C-kieless‰: paluuarvon tyyppi funktion nimen eteen,
         // parametrien tyypit ja nimet suluissa pilkuilla eroteltuina funktion nimen per‰‰n.
         // Funktio isLeapYear palauttaa totuusarvon, joka kertoo, onko year karkausvuosi.
-        static boolean isLeapYear(int year) {
+        private static boolean isLeapYear(int year) {
           // Karkausvuosi: jaollinen 4:ll‰ ja ei jaollinen 100:lla tai jaollinen 400:lla.
           // Javan loogisaritmeettiset operaatiot ja return-lause kuin C-kieless‰.
           return (year % 4 == 0) && ((year % 100 != 0) || (year % 400 == 0));
@@ -57,7 +57,7 @@ public class Date {
 
         // Funktio monthDays palauttaa tiedon, kuinka monta p‰iv‰‰ kuukaudessa
         // month vuonna year on. Palautusarvo -1 vastaa virheellist‰ kuukautta.
-        static int monthDays(int month, int year) {
+        private static int monthDays(int month, int year) {
           int days = -1;
           if(1 <= month && month <= 12) {
             // Ehdollinen operaattori kuin C-kieless‰.
@@ -68,7 +68,7 @@ public class Date {
 
         // Funktio isLegalDate tutkii, onko parametrien day, month ja year kuvaama
         // p‰iv‰m‰‰r‰ laillinen. T‰ss‰ vuosiluvun oletetaan olevan aina laillinen.
-        static boolean isLegalDate(int day, int month, int year) {
+        private static boolean isLegalDate(int day, int month, int year) {
           // Tuloksen laskenta on suoraviivaista, koska monthDays
           // palauttaa -1, jos kuukausi on laiton.
           return (1 <= day) && (day <= monthDays(month, year));
