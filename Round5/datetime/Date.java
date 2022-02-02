@@ -16,7 +16,7 @@ public class Date {
     public Date(int year, int month, int day) throws DateException{
         
         if(!LegalDate.isLegalDate(day,month,year)){
-            throw new DateException(String.format("illegal date %s.%s.%s",day,month,year));
+            throw new DateException(String.format("Illegal date %s.%s.%s",day,month,year));
         }
         
         this.year_ = year;
