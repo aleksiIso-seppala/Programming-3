@@ -110,20 +110,20 @@ public class Dates {
             if(endmonth.length() < 2){
                 endmonth = "0"+endmonth;
             }
-            String endday = Integer.toString(sorted.get(i-1).getMonthValue());
+            String endday = Integer.toString(sorted.get(i).getDayOfMonth());
             if(endday.length() < 2){
                 endday = "0"+endday;
             }
-            String startmonth = Integer.toString(sorted.get(i).getMonthValue());
+            String startmonth = Integer.toString(sorted.get(i-1).getMonthValue());
             if(startmonth.length() < 2){
                 startmonth = "0"+startmonth;
             }
-            String startday = Integer.toString(sorted.get(i-1).getMonthValue());
+            String startday = Integer.toString(sorted.get(i-1).getDayOfMonth());
             if(startday.length() < 2){
                 startday = "0"+startday;
             }
             String end = sorted.get(i).getYear()+"-"+endmonth+"-"+endday;
-            String start = sorted.get(i-1).getYear()+"-"+endmonth+"-"+endday;
+            String start = sorted.get(i-1).getYear()+"-"+startmonth+"-"+startday;
             var diff = sorted.get(i-1).until(sorted.get(i),ChronoUnit.DAYS);
             int diffInt = (int) diff;
             //muista split ja muutos uudelleen
