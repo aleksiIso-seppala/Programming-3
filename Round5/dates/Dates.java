@@ -55,7 +55,12 @@ public class Dates {
                 var split1 = dateStrs[i].split("-");
                 year = split1[0];
                 month = split1[1];
-                day = split1[2];    
+                day = split1[2];
+                if(month.length()<2 || day.length()<2){
+                    char parenthesis = '"';
+                    System.out.format("The date %s%s%s is illegal!%n",parenthesis,dateStrs[i],parenthesis); 
+                    continue;
+                }
             }
             else{
                 year = split[2];
