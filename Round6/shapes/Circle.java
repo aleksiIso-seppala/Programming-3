@@ -1,0 +1,34 @@
+
+
+public class Circle implements IShapeMetrics {
+    
+    private double radius_;
+    
+    public Circle(double radius){
+        this.radius_ = radius;
+    }
+    
+    public String toString(){
+        String line = String.format("Circle with radius: %.2f.", radius_);
+        return line;
+    }
+    
+    @Override
+    public String name(){
+        String line = "Circle";
+        return line;
+    }
+    
+    @Override
+    public double area(){
+        double area = PI*radius_*radius_;
+        return area;
+    }
+    
+    @Override
+    public double circumference(){
+        double result = PI*radius_;
+        return result;
+    }
+    
+}
