@@ -9,7 +9,7 @@ public class Circle implements IShapeMetrics {
     }
     
     public String toString(){
-        String line = String.format("Circle with radius: %.2f.", radius_);
+        String line = String.format("Circle with radius: %.2f", radius_);
         return line;
     }
     
@@ -21,13 +21,13 @@ public class Circle implements IShapeMetrics {
     
     @Override
     public double area(){
-        double area = PI*radius_*radius_;
+        double area = PI*(radius_*radius_);
         return area;
     }
     
     @Override
     public double circumference(){
-        double result = PI*radius_;
+        double result = 2*PI*radius_;
         return result;
     }
     
