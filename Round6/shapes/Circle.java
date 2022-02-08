@@ -15,7 +15,7 @@ public class Circle implements IShapeMetrics {
     
     @Override
     public String name(){
-        String line = "Circle";
+        String line = "circle";
         return line;
     }
     
