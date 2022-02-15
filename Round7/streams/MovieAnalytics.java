@@ -18,7 +18,7 @@ public class MovieAnalytics {
         Consumer<Movie> object = new Consumer<Movie>(){
             @Override
             public void accept(Movie t){
-                System.out.format("%s (%s %s)%n",t.getTitle(),t.getDirector(),t.getReleaseYear());  
+                System.out.format("%s (By %s, %s)%n",t.getTitle(),t.getDirector(),t.getReleaseYear());  
             }
         };
         return object;
@@ -63,6 +63,6 @@ public class MovieAnalytics {
         
         Comparator<Movie> compare = Comparator.comparing(Movie::getReleaseYear)
                                    .thenComparing(Movie::getTitle);
-        return movies.stream().sorted(compare).filter(m->m.getDirector()==director);                
+        return movies.stream().sorted(compare).filter(m->m.getDirector().equals(director));                
     }
 }
