@@ -31,9 +31,6 @@ public class MovieAnalytics2 {
         
         var test = movies.stream().collect(Collectors.groupingBy(Movie::getDirector,Collectors.counting()));
         
-        //test.entrySet().stream().sorted(Map.Entry.<String, Long>comparingByValue()
-        //        .reversed()).limit(n).forEach(e->System.out.format("%s: %s movies%n",e.getKey(),e.getValue()));
-        
         test.entrySet().stream()
                 .sorted(Collections
                         .reverseOrder(
@@ -45,7 +42,6 @@ public class MovieAnalytics2 {
     
     public void printAverageDurationByGenre(){
         var test = movies.stream().collect(Collectors.groupingBy(Movie::getGenre,Collectors.averagingInt(e->e.getDuration())));
-        //test.entrySet().stream().collect(Collectors.summingInt(e->e.getValue().getDuration()));
         
         test.entrySet().stream()
                 .sorted(Collections
@@ -58,16 +54,6 @@ public class MovieAnalytics2 {
     
     public void printAverageScoreByGenre(){
         var test = movies.stream().collect(Collectors.groupingBy(Movie::getGenre,Collectors.averagingDouble(e->e.getScore())));
-        //test.entrySet().stream().sorted(Map.Entry.<String,Double>comparingByValue().reversed()).
-        //        forEach(e->System.out.format("%s: %.2f%n",e.getKey(),e.getValue()));
-        
-        //test.entrySet().stream().sorted(Comparator.comparing(Map.Entry<String,Double>::getValue)
-        //        .thenComparing(Map.Entry<String,Double>::getKey).reversed()).
-        //forEach(e->System.out.format("%s: %.2f%n",e.getKey(),e.getValue()));
-        
-        //test.entrySet().stream().sorted(Map.Entry.<String,Double>comparingByValue()
-        //        .thenComparing(Map.Entry.comparingByKey()).reversed()).
-        //forEach(e->System.out.format("%s: %.2f%n",e.getKey(),e.getValue())); 
         
         test.entrySet().stream()
                 .sorted(Collections
