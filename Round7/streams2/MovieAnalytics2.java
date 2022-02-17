@@ -44,9 +44,8 @@ public class MovieAnalytics2 {
         var test = movies.stream().collect(Collectors.groupingBy(Movie::getGenre,Collectors.averagingInt(e->e.getDuration())));
         
         test.entrySet().stream()
-                .sorted(Collections
-                        .reverseOrder(
-                                Map.Entry.<String, Double>comparingByValue())
+                .sorted(
+                                Map.Entry.<String, Double>comparingByValue()
                         .thenComparing(Map.Entry.comparingByKey()))
         .forEach(e->System.out.format("%s: %.2f%n",e.getKey(),e.getValue())); 
         
