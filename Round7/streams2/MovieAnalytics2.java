@@ -47,7 +47,7 @@ public class MovieAnalytics2 {
                 .sorted(Collections
                         .reverseOrder(
                                 Map.Entry.<String, Double>comparingByValue())
-                        .thenComparing(Map.Entry.comparingByKey()).reversed())
+                        .thenComparing(Map.Entry.comparingByKey()))
         .forEach(e->System.out.format("%s: %.2f%n",e.getKey(),e.getValue())); 
         
     }
