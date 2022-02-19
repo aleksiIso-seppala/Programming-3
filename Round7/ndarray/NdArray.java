@@ -12,13 +12,13 @@ public class NdArray<E> extends AbstractCollection<E>{
         this.dimensions = new ArrayList<>();
         
         if(firstDimLen<0){
-            throw new NegativeArraySizeException("illegal dimension size "+firstDimLen+".");
+            throw new NegativeArraySizeException("Illegal dimension size "+firstDimLen+".");
         }
         
         dimensions.add(firstDimLen);
         for(int i=0;i<furtherDimLens.length;i++){
             if(furtherDimLens[i]<0){
-                throw new NegativeArraySizeException("illegal dimension size "+furtherDimLens[i]+".");
+                throw new NegativeArraySizeException("Illegal dimension size "+furtherDimLens[i]+".");
             }
             dimensions.add(furtherDimLens[i]);
             
@@ -43,12 +43,12 @@ public class NdArray<E> extends AbstractCollection<E>{
         
         if(dimensions.size() != indices.length){
             throw new IllegalArgumentException
-            (String.format("The array has &s dimension but &s indices were given",dimensions.size(),indices.length));
+            (String.format("The array has &s dimensions but &s indices were given.",dimensions.size(),indices.length));
         }
         for(int i=0;i<indices.length;i++){
             if((indices[i] < 0) || (indices[i]>=dimensions.get(i))){
                 throw new IndexOutOfBoundsException(String.format
-                ("Illegal index %s of dimension &s of length %s.",indices[i],(i+i),dimensions.get(i)));
+                ("Illegal index %s for dimension &s of length %s.",indices[i],(i+i),dimensions.get(i)));
             }
         }
 
@@ -71,12 +71,12 @@ public class NdArray<E> extends AbstractCollection<E>{
         
         if(dimensions.size() != indices.length){
             throw new IllegalArgumentException
-                (String.format("The array has %s dimension but %s indices were given",dimensions.size(),indices.length));
+                (String.format("The array has %s dimensions but %s indices were given.",dimensions.size(),indices.length));
         }
         for(int i=0;i<indices.length;i++){           
             if(indices[i] < 0 || indices[i]>=dimensions.get(i)){
                 throw new IndexOutOfBoundsException(String.format
-        ("Illegal index %s of dimension %s of length %s.",indices[i],(i+i),dimensions.get(i)));
+        ("Illegal index %s for dimension %s of length %s.",indices[i],(i+i),dimensions.get(i)));
             }
         }
         
