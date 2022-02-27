@@ -47,7 +47,6 @@ public class SevenZipSearch {
                 int count = countOccurences(templine.toLowerCase(),word);
                 String linelower = templine.toLowerCase();
                 if(count >1){
-                    System.out.println(lineindex + " " + count);
                     int i = 0;
                     int indeex = 0;
                     boolean word_found = false;
@@ -66,7 +65,6 @@ public class SevenZipSearch {
                             }
                         }
                         if(word_found == true){
-                            System.out.println(indeex);
                             templine = templine.substring(0,indeex)+word.toUpperCase()+
                         templine.substring(indeex+word.length(),line.length());
                             i++;
