@@ -52,6 +52,8 @@ public class SevenZipSearch {
                     boolean word_found = false;
                     while(i<count){
                         if(linelower.charAt(indeex) == word.charAt(0)){
+                            if(lineindex == 210){
+                            }
                             for(var j=0;j<word.length();j++){
                                 if(indeex + j > templine.length()){
                                     break;
@@ -68,12 +70,13 @@ public class SevenZipSearch {
                             templine = templine.substring(0,indeex)+word.toUpperCase()+
                         templine.substring(indeex+word.length(),line.length());
                             i++;
+                            word_found = false;
                         }
                         indeex++;
                     }
                 }
-                templine = line.substring(0,index)+word.toUpperCase()+
-                        line.substring(index+word.length(),line.length());
+                templine = templine.substring(0,index)+word.toUpperCase()+
+                        templine.substring(index+word.length(),line.length());
                 System.out.println(lineindex+": "+templine);
                 ++lineindex;
             }
