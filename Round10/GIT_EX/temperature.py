@@ -1,15 +1,18 @@
 
 def main():
 
+    transform_direction = input("Select transform direction (CF) or (FC): ")
+
     try:
         input_temp = float(input("Input temperature: "))
     except:
         print("Not valid input")
         exit()
 
-
-    print("{} C = {} F".format(input_temp, t_transform(input_temp, 'c')))
-
+    if transform_direction == "CF":
+        print("{} C = {} F".format(input_temp, t_transform(input_temp, 'c')))
+    if transform_direction == "FC":
+        print("{} F = {} C".format(input_temp, t_transform(input_temp, 'f')))
 
 
 def t_transform(temp, type):
