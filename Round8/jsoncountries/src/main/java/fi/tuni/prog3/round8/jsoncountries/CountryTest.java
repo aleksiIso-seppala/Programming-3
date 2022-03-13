@@ -1,3 +1,5 @@
+package fi.tuni.prog3.round8.jsoncountries;
+
 import fi.tuni.prog3.round8.jsoncountries.Country;
 import fi.tuni.prog3.round8.jsoncountries.CountryData;
 import java.util.Collections;
