@@ -1,3 +1,5 @@
+package fi.tuni.prog3.round8.xmlcountries;
+
 import fi.tuni.prog3.round8.xmlcountries.Country;
 import fi.tuni.prog3.round8.xmlcountries.CountryData;
 import java.util.Collections;
