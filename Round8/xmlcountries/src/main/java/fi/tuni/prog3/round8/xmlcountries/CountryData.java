@@ -4,6 +4,7 @@ package fi.tuni.prog3.round8.xmlcountries;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
@@ -14,7 +15,10 @@ import java.util.TreeMap;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
+import org.jdom2.Text;
 import org.jdom2.input.SAXBuilder;
+import org.jdom2.output.Format;
+import org.jdom2.output.XMLOutputter;
 
 public class CountryData {
     
@@ -82,7 +86,38 @@ public class CountryData {
         }
     }
     
-    public static void writeToXml(List<Country> countries,String countryFile){
+    public static void writeToXml(List<Country> countries,String countryFile) throws IOException{
+        
+        Element countriesEle = new Element("countries");
+        for(var country : countries){
+            Element countryEle = new Element("country");
+            
+            Element name = new Element("name");
+            name.addContent(new Text(country.getName()));
+            
+            Element area = new Element("area");
+            area.addContent(new Text(String.valueOf(country.getArea())));
+            
+            Element population = new Element("population");
+            population.addContent(new Text(String.valueOf(country.getPopulation())));
+            
+            Element gdp = new Element("gdp");
+            gdp.addContent(new Text(String.valueOf(country.getGdp())));
+            
+            countryEle.addContent(name);
+            countryEle.addContent(area);
+            countryEle.addContent(population);
+            countryEle.addContent(gdp);
+            
+            countriesEle.addContent(countryEle);
+            
+        }
+        
+        Document antbuild = new Document(countriesEle);
+        XMLOutputter xout = new XMLOutputter(Format.getPrettyFormat());
+        
+        FileOutputStream fileOutputStream = new FileOutputStream(countryFile);
+        xout.output(antbuild,fileOutputStream);
         
     }
         

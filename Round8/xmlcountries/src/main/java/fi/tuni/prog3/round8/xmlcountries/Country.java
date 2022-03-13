@@ -33,9 +33,11 @@ public class Country implements Comparable<Country>{
     public double getGdp() {
         return gdp;
     }
-    private void setGdp(int gdp){
-        this.gdp = gdp;
+    
+    public long getPopulation() {
+        return population;
     }
+    
     public String toString(){
         String line = "";
         line = String.format("%s%n  Area: %.1f km2%n  Population: %s%n  GDP: %.1f (2015 USD)",
