@@ -40,7 +40,7 @@ public class Country implements Comparable<Country>{
     
     public String toString(){
         String line = "";
-        line = String.format("%s%n  Area: %.1f km2%n  Population: %s%n  GDP: %.1f (2015 USD)",
+        line = String.format("%s%n  Area: %.1f km2%n  Population: %s%n  GDP: %.1f (2015 USD)%n",
                             name,area,population,gdp);
         return line;
     }
