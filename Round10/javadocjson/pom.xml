@@ -20,7 +20,7 @@
         <executions>
           <execution>
             <configuration>
-              <mainClass>fi.tuni.prog3.round8.xmlcountries.CountryTest</mainClass>
+              <mainClass>fi.tuni.prog3.json.Node.java</mainClass>
               <onejarVersion>0.97</onejarVersion>
               <attachToBuild>true</attachToBuild>
             </configuration>
