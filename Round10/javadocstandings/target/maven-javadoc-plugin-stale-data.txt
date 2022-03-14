@@ -1,0 +1,44 @@
+@options
+@packages
+@argfile
+-encoding
+'UTF-8'
+-protected
+-source
+'17'
+-sourcepath
+'C:/Koulu/Ohj3/Round10/javadocstandings/standings/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Koulu/Ohj3/Round10/javadocstandings/standings/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'standings 1.0 API'
+-use
+-version
+-windowtitle
+'standings 1.0 API'
+fi.tuni.prog3.standings
+'C:/Koulu/Ohj3/Round10/javadocstandings/standings/src/main/java/fi/tuni/prog3/standings/Standings.java'
+C:\Koulu\Ohj3\Round10\javadocstandings\standings\src\main\java = 1647267776170
+C:\Koulu\Ohj3\Round10\javadocstandings\standings\target\site\apidocs\allclasses-index.html = 1647269452053
+C:\Koulu\Ohj3\Round10\javadocstandings\standings\target\site\apidocs\allpackages-index.html = 1647269452055
+C:\Koulu\Ohj3\Round10\javadocstandings\standings\target\site\apidocs\element-list = 1647269452021
+C:\Koulu\Ohj3\Round10\javadocstandings\standings\target\site\apidocs\help-doc.html = 1647269452068
+C:\Koulu\Ohj3\Round10\javadocstandings\standings\target\site\apidocs\index-all.html = 1647269452064
+C:\Koulu\Ohj3\Round10\javadocstandings\standings\target\site\apidocs\index.html = 1647269452065
+C:\Koulu\Ohj3\Round10\javadocstandings\standings\target\site\apidocs\jquery-ui.overrides.css = 1647269452085
+C:\Koulu\Ohj3\Round10\javadocstandings\standings\target\site\apidocs\member-search-index.js = 1647269452058
+C:\Koulu\Ohj3\Round10\javadocstandings\standings\target\site\apidocs\module-search-index.js = 1647269452056
+C:\Koulu\Ohj3\Round10\javadocstandings\standings\target\site\apidocs\overview-tree.html = 1647269452046
+C:\Koulu\Ohj3\Round10\javadocstandings\standings\target\site\apidocs\package-search-index.js = 1647269452057
+C:\Koulu\Ohj3\Round10\javadocstandings\standings\target\site\apidocs\script.js = 1647269452070
+C:\Koulu\Ohj3\Round10\javadocstandings\standings\target\site\apidocs\search.js = 1647269452071
+C:\Koulu\Ohj3\Round10\javadocstandings\standings\target\site\apidocs\stylesheet.css = 1647269452069
+C:\Koulu\Ohj3\Round10\javadocstandings\standings\target\site\apidocs\tag-search-index.js = 1647269452058
+C:\Koulu\Ohj3\Round10\javadocstandings\standings\target\site\apidocs\type-search-index.js = 1647269452057
