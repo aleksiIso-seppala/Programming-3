@@ -44,10 +44,12 @@ public class AttainmentTest {
         boolean value = true;
         Attainment attainment1 = new Attainment("Bohj3","H299168",3);
         Attainment attainment2 = new Attainment("Ohj3","H299168",3);
-        Attainment attainment3 = new Attainment("Ohj3","H292168",3);         
-        if(attainment.compareTo(attainment2) > 0){value = false;}
-        if(attainment.compareTo(attainment1) > 0){value = false;}
+        Attainment attainment3 = new Attainment("Ohj3","H292168",3); 
+        Attainment attainment4 = new Attainment("Phj3","H292168",3);
+        if(attainment.compareTo(attainment2) >= 0){value = false;}
+        if(attainment1.compareTo(attainment) <= 0){value = false;}
         if(attainment.compareTo(attainment3) != 0){value = false;}
+        if(attainment.compareTo(attainment4) != -1){value = false;}
         assertTrue(value);
     }
     
