@@ -63,10 +63,10 @@ public class OrderTest {
     public void testItemIllegals(){
 
         Assertions.assertThrows(IllegalArgumentException.class, ()->{ 
-            new Item("afaa",-1.3);
+            new Order.Item("afaa",-1.3);
         });
         Assertions.assertThrows(IllegalArgumentException.class, ()->{ 
-            new Item(null,1.3);
+            new Order.Item(null,1.3);
         });
     }
     
@@ -94,7 +94,7 @@ public class OrderTest {
         
         Order.Item item1 = new Order.Item("thing",1.345);
         Assertions.assertThrows(IllegalArgumentException.class, ()->{ 
-            new Entry(item1,-2);
+            new Order.Entry(item1,-2);
         });
     }
     
