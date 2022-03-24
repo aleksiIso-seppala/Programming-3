@@ -64,8 +64,10 @@ public class OrderTest {
 
         Assertions.assertThrows(IllegalArgumentException.class, ()->{ 
             new Item("afaa",-1.3);
+        }
         Assertions.assertThrows(IllegalArgumentException.class, ()->{ 
             new Item(null,1.3);
+        }
     }
     
     @Test
@@ -84,7 +86,7 @@ public class OrderTest {
         Item item1 = new Item("thing",1.3345);
         Entry entry1 = new Entry(item1,3);
         String line = entry1.toString();
-        if(!line.equals("3 unites of item thing")){value = false};
+        if(!line.equals("3 unites of item thing")){value = false;}
         assertTrue(value);
     }
     @Test
@@ -93,6 +95,7 @@ public class OrderTest {
         Item item1 = new Item("thing",1.345);
         Assertions.assertThrows(IllegalArgumentException.class, ()->{ 
             new Entry(item1,-2);
+        }
     }
     
 }
