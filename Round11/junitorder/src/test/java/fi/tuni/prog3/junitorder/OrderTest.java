@@ -36,7 +36,20 @@ public class OrderTest {
         List<Order.Entry> entries = order1.getEntries();
         
         if(entries.size() > 0){value = false;}
-        
+        Order.Item item1 = new Order.Item("thing",1);
+        order1.addItems(item1,1);
+        List<Order.Entry> entries2 = order1.getEntries();
+        if(entries2.size() != 1){value = false;}
+        Order.Item item2 = new Order.Item("thing2",2);
+        order1.addItems(item2,1);
+        List<Order.Entry> entries3 = order1.getEntries();
+        if(entries3.size() != 2){value = false;}
+        order1.addItems(item1,1);
+        List<Order.Entry> entries4 = order1.getEntries();
+        if(entries4.size() != 2){value = false;}
+        order1.removeItems("thing",1);
+        List<Order.Entry> entries5 = order1.getEntries();
+        if(entries5.size() != 1){value = false;}        
         assertTrue(value);
     }
     
