@@ -15,7 +15,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 public class OrderTest {
 
-    public final Order order = new Order();
     
     @Test
     public void testOrderIsEmpty(){
@@ -36,8 +35,7 @@ public class OrderTest {
         
         List<Order.Entry> entries = order.getEntries();
         
-        if(order.getItemCount() != 0){value = false;}
-        if(entries.size() != 0){value = false;}
+        if(entries.size() > 0){value = false;}
         
         assertTrue(value);
     }
@@ -48,7 +46,7 @@ public class OrderTest {
         boolean value = true;
         
         Order order1 = new Order();
-        if(order1.getTotalPrice() != 0){value = false;}
+        if(order1.getTotalPrice() > 0){value = false;}
         Order.Item item1 = new Order.Item("thing",1.22);
         order1.addItems(item1,3);
         if(order1.getTotalPrice() != 3.66){value = false;}
@@ -72,7 +70,7 @@ public class OrderTest {
     public void testGetEntryCount(){
         boolean value = true;
         Order order1 = new Order();
-        if(order1.getEntryCount() != 0){value = false;}
+        if(order1.getEntryCount() > 0){value = false;}
         Order.Item item1 = new Order.Item("thing",1.23);
         order1.addItems(item1,3);
         if(order1.getEntryCount() != 1){value = false;}
@@ -120,7 +118,7 @@ public class OrderTest {
         if(!item1.getName().equals("thing")){value = false;}
         if(item1.getPrice() != 1.3445){value = false;}
         String line = item1.toString();
-        if(!line.equals(String.format("Item(thing,1.34"))){value = false;}
+        if(!line.equals(String.format("Item(thing, 1.34)"))){value = false;}
         assertTrue(value);
     }
     @Test
