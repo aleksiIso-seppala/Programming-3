@@ -32,8 +32,8 @@ public class OrderTest {
     @Test 
     public void testOrderGettersEmpty(){
         boolean value = true;
-        
-        List<Order.Entry> entries = order.getEntries();
+        Order order1  = new Order();
+        List<Order.Entry> entries = order1.getEntries();
         
         if(entries.size() > 0){value = false;}
         
