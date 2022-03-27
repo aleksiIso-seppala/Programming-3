@@ -54,7 +54,7 @@ public class OrderTest {
         Assertions.assertThrows(IllegalArgumentException.class, ()->{ 
             order1.addItems(item1,-2);
         });
-        Order.Item item2 = new Order.Item("thing",1);
+        Order.Item item2 = new Order.Item("thing",1.5);
         Assertions.assertThrows(IllegalStateException.class, ()->{
             order1.addItems(item2,2);
         });
@@ -159,7 +159,7 @@ public class OrderTest {
         Order.Item item1 = new Order.Item("thing",1.3345);
         Order.Entry entry1 = new Order.Entry(item1,3);
         String line = entry1.toString();
-        if(!line.equals("3 units of thing")){value = false;}
+        if(!line.equals("3 units of Item(thing, 1.34)")){value = false;}
         assertTrue(value);
     }
     @Test
