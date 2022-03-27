@@ -62,8 +62,8 @@ public class OrderTest {
         });
         order1.removeItems("thing",1);
         if(order1.getTotalPrice() != 2.44){value = false;}
-        Order.Item item2 = new Order.Item("thing2",1.00);
-        order1.addItems(item2,3);
+        Order.Item item3 = new Order.Item("thing2",1.00);
+        order1.addItems(item3,3);
         if(order1.getTotalPrice() != 5.44){value = false;}        
         assertTrue(value);
     }
