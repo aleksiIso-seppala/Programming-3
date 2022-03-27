@@ -5,6 +5,7 @@
 package fi.tuni.prog3.junitorder;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -22,7 +23,12 @@ public class OrderTest {
         Order order1 = new Order();
         if(!order1.isEmpty()){value = false;}
         
+        Order.Item item1 = new Order.Item("thing",21.24);
+        order1.addItems(item1,2);
+        if(order1.isEmpty()){value = false;}
         assertTrue(value);
+        
+        
     }
     @Test 
     public void testOrderGettersEmpty(){
@@ -30,12 +36,81 @@ public class OrderTest {
         
         List<Order.Entry> entries = order.getEntries();
         
-        if(order.getTotalPrice() != 0){value = false;}
         if(order.getItemCount() != 0){value = false;}
-        if(order.getEntryCount() != 0){value = false;}
         if(entries.size() != 0){value = false;}
         
         assertTrue(value);
+    }
+    
+    //testing total price and adding items
+    @Test
+    public void testGetTotalPrice(){
+        boolean value = true;
+        
+        Order order1 = new Order();
+        if(order1.getTotalPrice() != 0){value = false;}
+        Order.Item item1 = new Order.Item("thing",1.22);
+        order1.addItems(item1,3);
+        if(order1.getTotalPrice() != 3.66){value = false;}
+        
+        Assertions.assertThrows(IllegalArgumentException.class, ()->{ 
+            order1.addItems(item1,-2);
+        });
+        Order.Item item2 = new Order.Item("thing",1.44);
+        Assertions.assertThrows(IllegalStateException.class, ()->{
+            order1.addItems(item2,2);
+        });
+        order1.removeItems("thing",1);
+        if(order1.getTotalPrice() != 2.44){value = false;}
+        Order.Item item2 = new Order.Item("thing2",1.00);
+        order1.addItems(item2,3);
+        if(order1.getTotalPrice() != 5.44){value = false;}        
+        assertTrue(value);
+    }
+    
+    @Test
+    public void testGetEntryCount(){
+        boolean value = true;
+        Order order1 = new Order();
+        if(order1.getEntryCount() != 0){value = false;}
+        Order.Item item1 = new Order.Item("thing",1.23);
+        order1.addItems(item1,3);
+        if(order1.getEntryCount() != 1){value = false;}
+        Assertions.assertThrows(IllegalArgumentException.class, ()->{ 
+            order1.removeItems("thing",4);
+        });        
+        Assertions.assertThrows(IllegalArgumentException.class, ()->{ 
+            order1.removeItems("thing",-1);
+        }); 
+        Assertions.assertThrows(NoSuchElementException.class, ()->{ 
+            order1.removeItems("thi2ng",1);
+        });
+        Order.Item item2 = new Order.Item("thing2",1.44);
+        order1.addItems(item2,2);
+        if(order1.getEntryCount() != 2){value = false;} 
+        order1.removeItems("thing2",1);
+        if(order1.getEntryCount() != 2){value = false;}
+        order1.removeItems("thing2",1);
+        if(order1.getEntryCount() != 1){value = false;}
+        assertTrue(value);
+    }
+    
+    @Test
+    public void testItemCount(){
+        boolean value = true;
+        Order order1 = new Order();
+        if(order1.getItemCount() != 0){value = false;}
+        Order.Item item1 = new Order.Item("thing",1.23);
+        order1.addItems(item1,3);
+        if(order1.getEntryCount() != 3){value = false;}
+        Order.Item item2 = new Order.Item("thing2",1.44);
+        order1.addItems(item2,2);
+        if(order1.getEntryCount() != 5){value = false;} 
+        order1.removeItems("thing2",1);
+        if(order1.getEntryCount() != 4){value = false;}
+        order1.removeItems("thing2",1);
+        if(order1.getEntryCount() != 3){value = false;}
+        assertTrue(value);        
     }
     
     @Test
