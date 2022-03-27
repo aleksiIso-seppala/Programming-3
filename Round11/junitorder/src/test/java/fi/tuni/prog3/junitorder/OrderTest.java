@@ -156,10 +156,10 @@ public class OrderTest {
     @Test
     public void testEntryToString(){
         boolean value = true;
-        Order.Item item1 = new Order.Item("thing",1.3345);
+        Order.Item item1 = new Order.Item("thing",1.00);
         Order.Entry entry1 = new Order.Entry(item1,3);
         String line = entry1.toString();
-        if(!line.equals("3 units of Item(thing, 1.34)")){value = false;}
+        if(!line.equals("3 units of Item(thing, 1.00)")){value = false;}
         assertTrue(value);
     }
     @Test
