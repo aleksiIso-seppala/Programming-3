@@ -47,22 +47,22 @@ public class OrderTest {
         
         Order order1 = new Order();
         if(order1.getTotalPrice() > 0){value = false;}
-        Order.Item item1 = new Order.Item("thing",1.22);
+        Order.Item item1 = new Order.Item("thing",1);
         order1.addItems(item1,3);
-        if(order1.getTotalPrice() != 3.66){value = false;}
+        if(order1.getTotalPrice() != 3){value = false;}
         
         Assertions.assertThrows(IllegalArgumentException.class, ()->{ 
             order1.addItems(item1,-2);
         });
-        Order.Item item2 = new Order.Item("thing",1.44);
+        Order.Item item2 = new Order.Item("thing",1);
         Assertions.assertThrows(IllegalStateException.class, ()->{
             order1.addItems(item2,2);
         });
         order1.removeItems("thing",1);
-        if(order1.getTotalPrice() != 2.44){value = false;}
-        Order.Item item3 = new Order.Item("thing2",1.00);
+        if(order1.getTotalPrice() != 2){value = false;}
+        Order.Item item3 = new Order.Item("thing2",1);
         order1.addItems(item3,3);
-        if(order1.getTotalPrice() != 5.44){value = false;}        
+        if(order1.getTotalPrice() != 5){value = false;}        
         assertTrue(value);
     }
     
@@ -97,17 +97,17 @@ public class OrderTest {
     public void testItemCount(){
         boolean value = true;
         Order order1 = new Order();
-        if(order1.getItemCount() != 0){value = false;}
+        if(order1.getItemCount() > 0){value = false;}
         Order.Item item1 = new Order.Item("thing",1.23);
         order1.addItems(item1,3);
-        if(order1.getEntryCount() != 3){value = false;}
+        if(order1.getItemCount() != 3){value = false;}
         Order.Item item2 = new Order.Item("thing2",1.44);
         order1.addItems(item2,2);
-        if(order1.getEntryCount() != 5){value = false;} 
+        if(order1.getItemCount() != 5){value = false;} 
         order1.removeItems("thing2",1);
-        if(order1.getEntryCount() != 4){value = false;}
+        if(order1.getItemCount() != 4){value = false;}
         order1.removeItems("thing2",1);
-        if(order1.getEntryCount() != 3){value = false;}
+        if(order1.getItemCount() != 3){value = false;}
         assertTrue(value);        
     }
     
@@ -159,7 +159,7 @@ public class OrderTest {
         Order.Item item1 = new Order.Item("thing",1.3345);
         Order.Entry entry1 = new Order.Entry(item1,3);
         String line = entry1.toString();
-        if(!line.equals("3 unites of item thing")){value = false;}
+        if(!line.equals("3 units of thing")){value = false;}
         assertTrue(value);
     }
     @Test
