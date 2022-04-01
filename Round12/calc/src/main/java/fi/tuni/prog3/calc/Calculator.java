@@ -56,7 +56,8 @@ public class Calculator extends Application {
         btnDiv.setText("Divide");
         
         var fieldRes = new Label();
-        fieldRes.setBackground(new Background(new BackgroundFill(Color.WHITE,CornerRadii.EMPTY,Insets.EMPTY)));
+        fieldRes.setId("labelRes");
+        fieldRes.setBackground(new Background(new BackgroundFill(Color.WHITE,new CornerRadii(5),new Insets(5))));
         fieldRes.setText("");
         
         var labelRes = new Text("Result:");
